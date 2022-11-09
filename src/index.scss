@@ -18,6 +18,11 @@ table {
 /* .coin {
 } */
 
+th {
+  text-align: start;
+  padding: 0 10px;
+}
+
 td {
   border: solid 1px transparent;
   border-style: solid none;
@@ -47,7 +52,6 @@ td:last-child {
 
   span {
     text-transform: uppercase;
-    font-weight: 300;
     font-size: .7rem;
   }
 }

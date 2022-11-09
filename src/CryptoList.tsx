@@ -1,4 +1,5 @@
 import { useQuery } from '@tanstack/react-query'
+import Coin from './Coin'
 
 function CryptoList() {
   const getCrypto = () => {
@@ -15,22 +16,27 @@ function CryptoList() {
     <table className='crypto-list'>
       <thead>
         <tr>
-          <th colSpan={2}>Crypto Currencies</th>
+          <th>#</th>
+          <th>Identification</th>
+          <th>24h</th>
+          <th>Price</th>
+          <th>Market Cap</th>
         </tr>
       </thead>
       <tbody>
         {data.map((item: any, key: number) => {
-          const currentPrice = item.current_price
           return (
-            <tr className='coin'>
-              <td className='coin-rank'>{item.market_cap_rank}.</td>
-              <td className='coin-id'>
-                <img src={item.image} alt="" width={20} height={20}/>
-                <h2>{item.name}</h2>
-                <span>{item.symbol}</span>
-              </td>
-              <td>${currentPrice.toLocaleString('en-Us')}</td>
-            </tr>
+            <Coin 
+              rank={item.market_cap_rank} 
+              imgSrc={item.image}
+              name={item.name}
+              symbol={item.symbol}
+              mktChange24={item.market_cap_change_percentage_24h}
+              currentPrice={item.current_price}
+              marketCap={item.market_cap}
+              
+              key={key}
+            />
           )
         })}
       </tbody>
