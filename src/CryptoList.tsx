@@ -13,34 +13,37 @@ function CryptoList() {
 
 
   return (
-    <table className='crypto-list'>
-      <thead>
-        <tr>
-          <th>#</th>
-          <th>Identification</th>
-          <th>24h</th>
-          <th>Price</th>
-          <th>Market Cap</th>
-        </tr>
-      </thead>
-      <tbody>
-        {data.map((item: any, key: number) => {
-          return (
-            <Coin 
-              rank={item.market_cap_rank} 
-              imgSrc={item.image}
-              name={item.name}
-              symbol={item.symbol}
-              mktChange24={item.market_cap_change_percentage_24h}
-              currentPrice={item.current_price}
-              marketCap={item.market_cap}
-              
-              key={key}
-            />
-          )
-        })}
-      </tbody>
-    </table>
+    <>
+      <h1>Crypto Project made by Corviel</h1>
+      <table className='crypto-list'>
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Identification</th>
+            <th>24h</th>
+            <th>Price</th>
+            <th>Market Cap</th>
+          </tr>
+        </thead>
+        <tbody>
+          {data.map((item: any, key: number) => {
+            return (
+              <Coin 
+                rank={item.market_cap_rank} 
+                imgSrc={item.image}
+                name={item.name}
+                symbol={item.symbol}
+                mktChange24={item.market_cap_change_percentage_24h}
+                currentPrice={item.current_price}
+                marketCap={item.market_cap}
+                
+                key={key}
+              />
+            )
+          })}
+        </tbody>
+      </table>
+    </>
   );
 }
 
